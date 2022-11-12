@@ -88,6 +88,8 @@ function login()
   if($result)
   {
     $_SESSION['name'] = $result['name'];
+     
+    setcookie("name", $result['name'], time() + 3600);
 
     header("Location: index.php");
   }
@@ -110,7 +112,9 @@ function logout()
     unset($_SESSION['name']);
   }
 
-  header("Location: index.php");
+   setcookie ("name", "", time() - 3600);
+   
+   header("Location: index.php");
 }
 
 function checkRegisterParams($login, $pwd1, $pwd2, $email, $name)
