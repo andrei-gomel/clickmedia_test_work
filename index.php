@@ -1,8 +1,8 @@
 <?php
 
-session_start();
-
 include_once('functions.php');
+
+session_start();
 
 if (isset($_COOKIE['name'])) 
 	echo '<h3>Имя: ' . $_COOKIE['name'] . ' (через куки)</h3><br>';
