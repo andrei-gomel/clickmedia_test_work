@@ -7,7 +7,7 @@ session_start();
 if (isset($_COOKIE['name'])) 
 	echo '<h3>Имя: ' . $_COOKIE['name'] . ' (через куки)</h3><br>';
 
-if(isset($_SESSION['name']))
+if(isset($_SESSION['name']) AND $_SESSION['name'] != null)
 {
 	echo '<h3>Привет, ' . $_SESSION['name'] . ' (через сессию)</h3>';
 	echo ' <a href="index.php?action=logout">Выход</a>';
