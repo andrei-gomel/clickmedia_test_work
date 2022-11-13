@@ -2,12 +2,6 @@
 
 include_once('Db.php');
 
-/**
-* AJAX регистрация пользователя
-* Инициализация сессионной переменной ($_SESSION['user'])
-*
-* @return json массив данных нового пользователя
-*/
 function registration()
 {
    $login = isset($_POST['login']) ? $_POST['login'] : null;
@@ -110,6 +104,7 @@ function logout()
   if(isset($_SESSION['name']))
   {
     unset($_SESSION['name']);
+     session_destroy();
   }
 
    setcookie ("name", "", time() - 3600);
