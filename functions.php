@@ -263,6 +263,7 @@ function checkLoginParams($login, $pass)
    if ($loginError != '')
    {
       include_once 'forms.php';
+      exit;
    }
 
   return true;
